@@ -1,24 +1,24 @@
 *{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  color: white;
+  margin: 0;
 }
 body{
+  background-image: url(../public/bg\ Image.jpg);
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
+  backdrop-filter: blur(8px);
 }
-img{
-  border-radius: 50%;
-  width: 200px;
-  margin-top: 5vh;
-  animation-name: image;
-  animation-duration: 45s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+h1{
+  font-size: 4rem;
 }
-@keyframes image {
-  0%{
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(360deg);
-  }
+p{
+  font-size: 1.5rem;
+}
+h1, p{
+  cursor: default;
 }
