@@ -1,24 +1,53 @@
+:root{
+  /* Project Colors */
+  --main-color: rgb(38, 96, 164);
+  --light-color: rgb(237, 247, 246);
+  --accent-color: rgb(241, 153, 83);
+
+  /* Project fonts */
+  --main-font: monospace;
+  --secondary-font: Verdana;
+  --bold-font-weight: 900;
+  --regular-font-weight: 500;
+}
+
 *{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center;
-  color: white;
   margin: 0;
 }
 body{
-  background-image: url(../public/bg\ Image.jpg);
+  padding: 2.5vh 5vw;
+  box-sizing: border-box;
+}
+
+.Hero{
+  background-image: url(https://wallpapers.com/images/hd/caption-serene-sunset-in-a-minimalist-landscape-ly49jgicqedu5nu6.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  display: grid;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  width: 100%;
+  height: clamp(250px, 75vw, 750px);
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-h1{
-  font-size: 4rem;
-}
-p{
-  font-size: 1.5rem;
-}
-h1, p{
+.heroTitle{
+  color: var(--light-color);
+  font-family: var(--main-font);
+  font-size: 6rem;
   cursor: default;
+}
+.heroBtn{
+  border: none;
+  background-color: var(--light-color);
+  font-family: var(--main-font);
+  font-size: 1rem;
+  font-weight: var(--bold-font-weight);
+  padding: 16px 48px;
+  border-radius: 8px;
+  color: var(--main-color);
+  box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.25);
+  cursor: pointer;
+  align-self: flex-end;
 }
