@@ -1,53 +1,133 @@
 :root{
-  /* Project Colors */
-  --main-color: rgb(38, 96, 164);
-  --light-color: rgb(237, 247, 246);
-  --accent-color: rgb(241, 153, 83);
-
-  /* Project fonts */
-  --main-font: monospace;
-  --secondary-font: Verdana;
-  --bold-font-weight: 900;
-  --regular-font-weight: 500;
+  --light-color: rgb(250, 250, 250);
+  --dark-color: rgb(40, 40, 40);
+}
+@font-face {
+  font-family: Heading;
+  src: url(../private/data/fonts/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Paragraph;
+  src: url(../private/data/fonts/Roboto-VariableFont_wdth\,wght.ttf);
 }
 
+html{
+  scroll-behavior: smooth;
+}
 *{
   margin: 0;
+  padding: 0;
 }
-body{
-  padding: 2.5vh 5vw;
-  box-sizing: border-box;
+h1, h2, h3, h4{
+  font-family: Heading;
+  font-weight: 500;
 }
-
-.Hero{
-  background-image: url(https://wallpapers.com/images/hd/caption-serene-sunset-in-a-minimalist-landscape-ly49jgicqedu5nu6.jpg);
+p{
+  font-family: Paragraph;
+  font-weight: 400;
+  line-height: clamp(25px, 5vw, 30px);
+  font-style: italic;
+}
+.homeSection{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: clamp(100px, 25vh, 500px) clamp(100px, 20vw, 500px);
+  color: var(--light-color);
+  z-index: 1;
+}
+.homeSection::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://media.jungfrau.ch/image/upload/ar_16:9,c_crop,fl_lossy,q_auto/c_scale,w_3247/v1698672924/Winterwandern-Kleine-Scheidegg-Maennlichen-Eiger-Moench-Jungfrau-3-new-2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 16px;
-  width: 100%;
-  height: clamp(250px, 75vw, 750px);
-  padding: 10vh 5vw;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-position: bottom;
+  background-attachment: fixed;
+  filter: brightness(65%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
-.heroTitle{
-  color: var(--light-color);
-  font-family: var(--main-font);
-  font-size: 6rem;
+.leftTextBox{
+  cursor: default;
+  width: clamp(300px, 25vw, 750px);
+}
+.leftTextBox h1{
+  font-size: clamp(2rem, 20vw, 6rem);
+  font-weight: 500;
+}
+.leftTextBox p{
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+.rightFormBox form{
+  display: grid;
+  width: clamp(300px, 20vw, 750px);
+  text-align: end;
+  gap: 10px;
+}
+.rightFormBox h4{
+  font-size: 1.5rem;
   cursor: default;
 }
-.heroBtn{
-  border: none;
+.rightFormBox input{
   background-color: var(--light-color);
-  font-family: var(--main-font);
+  border: none;
+  height: 50px;
+  padding: 8px 16px;
+  box-sizing: border-box;
   font-size: 1rem;
-  font-weight: var(--bold-font-weight);
-  padding: 16px 48px;
-  border-radius: 8px;
-  color: var(--main-color);
-  box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.25);
+  text-align: end;
+}
+.submitBtn{
+  background-color: transparent;
+  border: 2px solid var(--light-color);
+  color: var(--light-color);
+  width: fit-content;
+  padding: 12px 32px;
+  font-size: 1rem;
+  justify-self: end;
+  font-family: Paragraph;
   cursor: pointer;
-  align-self: flex-end;
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+  height: 50px;
+}
+.submitBtn::before{
+  content: '';
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  display: block;
+  background-color: var(--light-color);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+.submitBtn:hover{
+  color: var(--dark-color);
+}
+.submitBtn:hover::before{
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .homeSection{
+    flex-direction: column;
+    align-content: center;
+    padding: clamp(100px, 25vh, 200px) clamp(10px, 10vw, 300px);
+  }
+  .leftTextBox{
+    width: clamp(150px, 100%, 500px);
+  }
+  .rightFormBox form{
+    margin-top: 15vh;
+    width: clamp(150px, 100%, 500px);
+  }
 }

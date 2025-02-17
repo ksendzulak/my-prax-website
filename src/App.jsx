@@ -1,14 +1,9 @@
-import Navbar from './Navbar.jsx'
+import Home from './Home.jsx'
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <br />
-      <div className='Hero'>
-        <h1 className='heroTitle'>Welcome on this <u>Useless</u> website.</h1>
-        <button className='heroBtn'>Explore</button>
-      </div>
+      <Home/>
     </>
   )
 }
