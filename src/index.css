@@ -1,6 +1,8 @@
 :root{
   --light-color: rgb(250, 250, 250);
-  --dark-color: rgb(40, 40, 40);
+  --dark-color: rgb(60, 60, 60);
+  --bg-color: rgb(220,220,220);
+  --accent-color: rgb(100,110,150);
 }
 @font-face {
   font-family: Heading;
@@ -25,8 +27,9 @@ h1, h2, h3, h4{
 p{
   font-family: Paragraph;
   font-weight: 400;
-  line-height: clamp(25px, 5vw, 30px);
+  line-height: clamp(20px, 5vw, 25px);
   font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 .homeSection{
   position: relative;
@@ -60,9 +63,6 @@ p{
 .leftTextBox h1{
   font-size: clamp(2rem, 20vw, 6rem);
   font-weight: 500;
-}
-.leftTextBox p{
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 .rightFormBox form{
   display: grid;
@@ -115,6 +115,35 @@ p{
 }
 .submitBtn:hover::before{
   height: 100%;
+}
+
+.numberedOfferSection{
+  background-color: var(--bg-color);
+  padding: 10vh clamp(10px, 20vw, 500px);
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.numOfferBox{
+  width: 350px;
+  text-align: center;
+  cursor: default;
+}
+.numOfferBox h3{
+  font-size: 8rem;
+  font-weight: 600;
+  color: white;
+}
+.numOfferBox h2{
+  color: var(--dark-color);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.numOfferBox p{
+  color: var(--dark-color);
+  font-weight: 500;
 }
 
 @media (max-width: 1100px) {
