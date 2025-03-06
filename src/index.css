@@ -68,6 +68,7 @@ p{
   display: grid;
   width: clamp(300px, 20vw, 750px);
   text-align: end;
+  justify-items: end;
   gap: 10px;
 }
 .rightFormBox h4{
@@ -82,6 +83,7 @@ p{
   box-sizing: border-box;
   font-size: 1rem;
   text-align: end;
+  width: 100%;
 }
 .submitBtn{
   background-color: transparent;
@@ -90,7 +92,6 @@ p{
   width: fit-content;
   padding: 12px 32px;
   font-size: 1rem;
-  justify-self: end;
   font-family: Paragraph;
   cursor: pointer;
   transition: 0.3s;
@@ -144,6 +145,56 @@ p{
 .numOfferBox p{
   color: var(--dark-color);
   font-weight: 500;
+}
+
+.visualOffer{
+  display: flex;
+}
+.bigImageComponent{
+  position: relative;
+  z-index: 10;
+  cursor: default;
+  display: grid;
+  grid-template-columns: 65%;
+  grid-template-rows: max-content auto 25vh;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  color: var(--light-color);
+  overflow: hidden;
+}
+.bigImageComponent:hover .componentBg{
+  filter: grayscale(0) brightness(0.5);
+  scale: 1.1;
+}
+.componentBg{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  filter: grayscale(100) brightness(0.75);
+  transition: 0.3s;
+}
+.bigImageComponent h3{
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 7.5vh;
+}
+.bigImageComponent h4{
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.bigImageComponent Button{
+  /* margin: 15vh 0; */
+  align-self: center;
 }
 
 @media (max-width: 1100px) {

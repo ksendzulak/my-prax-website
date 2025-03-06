@@ -1,3 +1,4 @@
+import Button from "./components/Button"
 function Home(){
     return(
         <div className="homeSection">
@@ -14,7 +15,7 @@ function Home(){
                     <h4>Chcem dostávať novinky</h4>
                     <input type="text" placeholder="Zadajte svoje meno"/>
                     <input type="email" placeholder="Zadajte emailovu adresu"/>
-                    <button className="submitBtn">Odoslať</button>
+                    <Button text="Odoslať"/>
                 </form>
             </div>
         </div>
