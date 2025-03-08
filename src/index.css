@@ -210,4 +210,7 @@ p{
     margin-top: 15vh;
     width: clamp(150px, 100%, 500px);
   }
+  .visualOffer{
+    flex-wrap: wrap;
+  }
 }
